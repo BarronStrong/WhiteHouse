@@ -33,16 +33,17 @@ ul{
 }
 
 .background {
-    width: 100%; /* Chiều rộng của nền */
-    height: 200px; /* Chiều cao của nền */
-    background-color: #f0f0f0; /* Màu nền */
-    position: relative; /* Đảm bảo phần tử có thể di chuyển */
-    overflow: hidden; /* Ẩn phần ngoài vùng hiển thị của nền */
+    width: 100%; 
+    height: 200px; 
+    background-color: #f0f0f0; 
+    position: relative; 
+    overflow: hidden; 
   }
   /* Styles for social media buttons */
 .social-button {
+    justify-content: center;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     color: #fff;
     cursor: pointer;
     font-size: 16px;
@@ -52,18 +53,25 @@ ul{
   }
   
   .social-button i {
-    margin-right: 5px;
+    margin-right: 20px;
+    font-size: 50px;
   }
   
   /* Styles for Telegram button */
   .telegram {
+    font-size: 35px;
     display: flex;
     align-items: center;
+    width: 300px;
+    height: 100px;
     background-color: #2ca5e0; /* Color for Telegram */
   }
   
   /* Styles for Twitter button */
   .twitter {
+    font-size: 35px;
+    width: 300px;
+    height: 100px;
     display: flex;
     align-items: center;
     background-color: #1da1f2; /* Color for Twitter */
@@ -412,7 +420,7 @@ section .title::after {
 
 .home {
     display: flex;
-    background-image: linear-gradient(rgba(0, 29, 56, 0.4), rgba(0, 29, 56, 0.6 )), url(images/whitehouse.jpg);
+    background-image: linear-gradient(rgba(0, 29, 56, 0.4), rgba(0, 29, 56, 0.6 )), url(../images/whitehouse.jpg);
     height: 100vh;
     color: #fff;
     min-height: 500px;
@@ -464,11 +472,11 @@ section .title::after {
     background: none;
 }
 
-.about,.services{
-    background-image: url("images/bg2.jpg");
+.about,.services,.contact{
+    background-image: url("../images/bg2.jpg");
     background-size: cover;
     background-position: center; 
-  background-repeat: no-repeat; 
+    background-repeat: no-repeat; 
 }
 
 /* Trang giới thiệu */
@@ -493,8 +501,9 @@ section .title::after {
 }
 
 .about .about-content1 .right .text {
-    font-size: 25px;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 500;
+    white-space-collapse: break-spaces;
     margin-bottom: 10px;
 }
 
@@ -520,6 +529,10 @@ section .title::after {
 }
 
 .about .about-content1 .right a:hover {
+    color: #1197f5;
+    background: none;
+}
+.about .about-content1 .right a:hover .img-tw {
     color: #1197f5;
     background: none;
 }
@@ -675,8 +688,7 @@ section .title::after {
 }
 
 .services .title::before {
-    background: none;
-    width: 230px;
+    background: #fff;
 }
 
 .teams .title::before {
@@ -684,8 +696,9 @@ section .title::after {
 }
 
 .services .title::after {
-    background: #111;
-    content: "";
+    background: #012c4d;
+    color: #fff;
+    content: "What Makes White House Different?";
 }
 
 .teams .title::after {
@@ -697,16 +710,16 @@ section .title::after {
 
 .services .serv-content .card {
     width: calc(33% - 20px);
-    background: #222;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
     text-align: center;
     border-radius: 6px;
-    padding: 20px 25px;
+    padding: 40px 25px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .services .serv-content .card:hover {
-    background: crimson;
+    background: #1197f5;
 }
 
 .services .serv-content .card .box {
@@ -719,8 +732,9 @@ section .title::after {
 }
 
 .services .serv-content .card i {
+    margin-bottom: 25px;
     font-size: 50px;
-    color: crimson;
+    color: #1197f5;
     transition: color 0.3s ease;
 }
 
@@ -738,7 +752,7 @@ section .title::after {
 /* Trang nhóm */
 
 .teams .carousel .card {
-    background: #222;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
     border-radius: 6px;
     padding: 25px 35px;
     text-align: center;
@@ -1040,7 +1054,7 @@ footer span a:hover {
         flex: 100%;
     }
     .services .serv-content .card {
-        width: calc(50% - 10px);
+        width: calc(100% - 10px);
         margin-bottom: 20px;
     }
     .skills .skills-content .column,

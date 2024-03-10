@@ -1,14 +1,11 @@
 $(document).ready(function() {
     $(window).scroll(function() {
-        // Đổi màu thanh công cụ khi kéo xuống 
         if (this.scrollY > 20) {
             $('.navbar-custom').addClass("sticky");
         } else {
             $('.navbar-custom').removeClass("sticky");
         }
         var aboutBtn=document.getElementById("btn-about");
-        
-        // Hiện nút kéo lên 
         if (this.scrollY > 500) {   
             $('.scroll-up-btn').addClass("show"); 
         } else {
@@ -34,8 +31,6 @@ $(document).ready(function() {
     //     loop: true
     // });
 
-
-    //Gán function cho nút kéo lên 
     $('.scroll-up-btn').click(function() {
         $('html').animate({ scrollTop: 0 });
         $('html').css("scrollBehavior", "auto");
@@ -44,7 +39,6 @@ $(document).ready(function() {
     $('.navbar-custom .menu li a').click(function() {
         $('html').css("scrollBehavior", "smooth");
     });
-    //Hiện nút menu
     $('.menu-btn').click(function() {
         $('.navbar-custom .menu').toggleClass("active");
         $('.menu-btn i').toggleClass("active");
