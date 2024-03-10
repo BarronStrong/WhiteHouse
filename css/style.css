@@ -503,7 +503,6 @@ section .title::after {
 .about .about-content1 .right .text {
     font-size: 24px;
     font-weight: 500;
-    white-space-collapse: break-spaces;
     margin-bottom: 10px;
 }
 
