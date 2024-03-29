@@ -86,3 +86,19 @@ function initIntersectionObserver() {
         observer.observe(element);
     });
 }
+document.addEventListener("DOMContentLoaded", function() {
+    const slowPointer = document.querySelector('.slow-pointer');
+    const fastPointer = document.querySelector('.fast-pointer');
+
+    document.addEventListener('mousemove', function(e) {
+        setTimeout(function() {
+            fastPointer.style.left = e.pageX + 'px';
+            fastPointer.style.top = e.pageY + 'px';
+        }, 15);
+        
+        setTimeout(function() {
+            slowPointer.style.left = e.pageX + 'px';
+            slowPointer.style.top = e.pageY + 'px';
+        }, 60); 
+    });
+});

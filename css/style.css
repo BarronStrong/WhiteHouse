@@ -8,6 +8,38 @@
     text-decoration: none;
 }
 
+.container-p {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.slow-pointer {
+    position: absolute;
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%;
+    border: 1px white solid;
+    /* background-color: rgba(0, 0, 255, 0.5);  */
+    pointer-events: none;
+    z-index: 9998; 
+    left: 50%; 
+    top: 50%; 
+    transform: translate(-50%, -50%); 
+}
+
+.fast-pointer {
+    position: absolute;
+    width: 8px; 
+    height: 8px; 
+    border-radius: 50%;
+    background-color: white ; /* Màu của hình tròn fast */
+    pointer-events: none;
+    z-index: 9999;
+    left: 50%; /* Đặt hình tròn fast ở giữa hình tròn slow */
+    top: 50%; /* Đặt hình tròn fast ở giữa hình tròn slow */
+    transform: translate(-50%, -50%); /* Dịch chuyển hình tròn fast để nằm ở giữa hình tròn slow */
+}
 html {
     scroll-behavior: smooth;
 }
@@ -28,7 +60,7 @@ ul{
 
 #gif {
     position: absolute;
-    width: 100%; /* Kích thước ban đầu của hình ảnh */
+    width: 100%; 
     height: auto;
 }
 
@@ -64,9 +96,18 @@ ul{
     align-items: center;
     width: 300px;
     height: 100px;
-    background-color: #2ca5e0; /* Color for Telegram */
+    background-color: #1da1f2; /* Color for Telegram */
+    margin-bottom: 25px;
   }
-  
+    @media only screen and (max-width: 768px) {
+        .btn-box-tele {
+            justify-content: center !important;
+        }
+        .btn-box-twitter {
+            justify-content: center !important;
+        }
+    }
+    
   /* Styles for Twitter button */
   .twitter {
     font-size: 35px;
@@ -75,8 +116,14 @@ ul{
     display: flex;
     align-items: center;
     background-color: #1da1f2; /* Color for Twitter */
+    margin-bottom: 25px;
   }
-  
+    .btn-box-tele {
+        justify-content: flex-end;
+    }
+    .btn-box-twitter {
+        justify-content: flex-start;
+    }
   /* Hover effect */
   .social-button:hover {
     opacity: 0.8;
@@ -84,22 +131,22 @@ ul{
   /* Animation keyframes */
   @keyframes moveBackground {
     0% {
-      left: 0; /* Vị trí bắt đầu từ trái */
+      left: 0; 
     }
     100% {
-      left: 100%; /* Vị trí cuối cùng bên phải */
+      left: 100%; 
     }
   }
   
   .background::before {
-    content: ''; /* Thêm một phần tử giả trước nền */
+    content: ''; 
     position: absolute;
     top: 0;
-    left: -100%; /* Bắt đầu ẩn bên trái */
-    width: 200%; /* Chiều rộng lớn gấp đôi chiều rộng của nền */
-    height: 100%; /* Chiều cao giống với nền */
-    background: linear-gradient(to right, transparent, #f0f0f0, transparent); /* Gradient cho chạy từ trái qua phải */
-    animation: moveBackground 5s linear infinite; /* Thực hiện animation */
+    left: -100%; 
+    width: 200%; 
+    height: 100%; 
+    background: linear-gradient(to right, transparent, #f0f0f0, transparent); 
+    animation: moveBackground 5s linear infinite; 
   }
 @keyframes zoomAndSlide {
     0% {
@@ -170,12 +217,12 @@ ul{
 
 @keyframes slideInFromTop {
     from {
-        transform: translateY(-100%); /* Bắt đầu từ trên cùng của viewport */
-        opacity: 0; /* Bắt đầu với opacity là 0 để làm mờ dần vào */
+        transform: translateY(-100%); 
+        opacity: 0; 
     }
     to {
-        transform: translateY(0); /* Kết thúc tại vị trí tự nhiên của phần tử */
-        opacity: 1; /* Kết thúc với opacity là 1 */
+        transform: translateY(0); 
+        opacity: 1;
     }
 }
 .animated-element-top {
@@ -303,20 +350,6 @@ section .title::after {
     transform: translateX(-50%);
 }
 
-/* #fb{
-    background-color: #1197f5;
-    border-color: #1197f5;
-} */
-#tele{
-    background-color: #1197f5;
-    border-color: #1197f5;
-}
-#tiktok{
-    background-color: #000;
-    border-color: #000;
-}
-/* Thanh công cụ */
-
 .navbar-custom {
     position: fixed;
     width: 100%;
@@ -356,6 +389,9 @@ section .title::after {
     list-style: none;
     display: inline-block;
 }
+.navbar-custom .menu {
+    width: 41.67%;
+}
 
 .navbar-custom .menu li a {
     display: block;
@@ -374,8 +410,6 @@ section .title::after {
     color: #c2d3e8;
 }
 
-
-/* Nút điều hướng */
 
 .menu-btn {
     color: #fff;
@@ -414,9 +448,6 @@ section .title::after {
 .scroll-up-btn:hover {
     filter: brightness(90%);
 }
-
-
-/* Trang chủ  */
 
 .home {
     display: flex;
@@ -472,15 +503,21 @@ section .title::after {
     background: none;
 }
 
-.about,.services,.contact{
-    background-image: url("../images/bg2.jpg");
+.about,.services{
+    background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+    /* background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%); */
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+.teams{
+    background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
     /* background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%); */
     background-size: cover;
     background-position: center; 
     background-repeat: no-repeat; 
 }
 
-/* Trang giới thiệu */
 
 .about .title::after {
     content: "Our vision";
@@ -587,7 +624,6 @@ section .title::after {
 .anh{
     border-right: 100px;
 }
-/* Trang kỹ năng */
 
 .skills .title::after {
     content: "";
@@ -678,32 +714,44 @@ section .title::after {
 }
 
 
-/* Trang dịch vụ */
-
 .services,
-.teams {
+.contact {
     color: #fff;
     background: #0B284E;
-    
 }
 
+@media only screen and (max-width: 796px) {
+    .title-service {
+        height: 96px;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .title-service {
+        height: 115px;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .title-service {
+        height: 133px;
+    }
+}
 .services .title::before {
-    background: #fff;
+    background: transparent;
 }
 
 .teams .title::before {
-    background: #fff;
+    background: transparent;
 }
 
 .services .title::after {
-    background: #012c4d;
+    background: transparent;
     color: #fff;
     content: "What Makes White House Different?";
 }
 
 .teams .title::after {
-    background: #012c4d;
-    color: #fff;
+    background: transparent;
+    color: #0B284E;
     content: "Member";
 }
 
@@ -747,9 +795,6 @@ section .title::after {
     font-weight: 500;
     margin: 10px 0 7px 0;
 }
-
-
-/* Trang nhóm */
 
 .teams .carousel .card {
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
@@ -824,10 +869,13 @@ section .title::after {
 }
 
 
-/* Trang liên hệ */
-
 .contact .title::after {
     content: "Contact";
+    color: #fff;
+    background-color: transparent;
+}
+.contact .title::before {
+    color: transparent;
 }
 
 .contact .contact-content .column {
@@ -942,9 +990,6 @@ section .title::after {
     background: none;
 }
 
-
-/* Thanh thông tin */
-
 footer {
     background: #111;
     padding: 15px 23px;
@@ -988,7 +1033,7 @@ footer span a:hover {
     }
 }
 
-@media (max-width: 947px) {
+@media (max-width: 1200px) {
     .logo{
         display: none;
     }
@@ -1003,24 +1048,30 @@ footer span a:hover {
         content: "\f00d";
     }
     .navbar-custom .menu {
+        visibility: hidden;
         position: fixed;
-        height: 100vh;
+        height: 100%;
         width: 100%;
-        left: -100%;
         top: 0;
         background: #111;
         text-align: center;
         padding-top: 80px;
         transition: all 0.3s ease;
+        display: block; 
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
     }
     .navbar-custom .menu.active {
+        width: 100%;
+        visibility: visible;
         left: 0;
     }
     .navbar-custom .menu li {
-        display: block;
+        display: inline-block; 
     }
     .navbar-custom .menu li a {
-        display: inline-block;
+        display: block; 
         margin: 20px 0;
         font-size: 25px;
     }

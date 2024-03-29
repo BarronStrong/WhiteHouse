@@ -32,17 +32,22 @@
 </head>
 
 <body>
+    <div class="container-p">
+        <div class="slow-pointer"></div>
+        <div class="fast-pointer"></div>
+    </div>
     <div class="scroll-up-btn">
         <i class="fas fa-angle-up"></i>
     </div>
     <nav class="navbar-custom">
         <div class="row align-items-center justify-content-center">
-            <div class="logo col-5"><a href="#">White<span>House</span></a></div>
-            <img src="images/logo_non_bg.png" class="logo-rotate" alt="">
-            <ul class="menu col-5 d-flex justify-content-center align-items-center">
+            <div class="logo col-5"><a href="#home">White<span>House</span></a></div>
+            <div class="d-flex justify-content-start"><img  src="images/logo_non_bg.png" class="logo-rotate" alt=""></div>
+            <ul class="menu d-flex justify-content-center align-items-center">
                 <li><a href="#home" id="btn-home" class="menu-btn">HOME</a></li>
                 <li><a href="#about" id="btn-about" class="menu-btn">ABOUT</a></li>
-                <li><a href="#teams" id="btn-teams" class="menu-btn">FOUNDER</a></li>
+                <li><a href="#services" id="btn-services" class="menu-btn">SERVICES</a></li>
+                <li><a href="#founder" id="btn-founder" class="menu-btn">FOUNDER</a></li>
                 <li><a href="#contact" id="btn-contact" class="menu-btn">CONTACT</a></li>
             </ul>
             <div class="menu-btn col-5">
@@ -92,7 +97,7 @@
     </section>
     <section class="services" id="services">
         <div class="max-width">
-            <h2 class="title">SERVICES</h2>
+            <h2 class="title title-service">SERVICES</h2>
             <div class="serv-content">
                 <div class="card">
                     <div class="box">
@@ -120,31 +125,7 @@
         </div>
         </div>
     </section>
-    <section class="contact" id="contact">
-        <div class="max-width">
-            <h2 class="title">CONTACT US</h2>
-            <div class="contact-content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm d-flex justify-content-end align-items-center">
-                            <button class="social-button telegram"
-                                onclick="window.open('https://t.me/whitehousecalls', '_self')">
-                                <i class="fab fa-telegram " style="color: aliceblue; font-size: 45px;"></i> Telegram
-                            </button>
-                        </div>
-                        <div class="col-sm d-flex justify-content-start align-items-center">
-                            <button class="social-button twitter"
-                                onclick="window.open('https://twitter.com/WhiteHouseCall', '_self')">
-                                <img width="45" height="45" src="https://img.icons8.com/ios/50/twitterx--v1.png"
-                                    alt="twitterx--v1" style="filter: invert(100%); margin-right: 20px;" /> Twitter
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="teams" id="teams">
+    <section class="teams" id="founder">
         <div class="max-width">
             <h2 class="title">Founder</h2>
             <div class="carousel owl-carousel" style="margin-top: 50px;">
@@ -170,6 +151,31 @@
             </div>
         </div>
     </section>
+    <section class="contact" id="contact">
+        <div class="max-width">
+            <h2 class="title">CONTACT US</h2>
+            <div class="contact-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm d-flex btn-box-tele justify-content-end align-items-center">
+                            <button class="social-button telegram"
+                                onclick="window.open('https://t.me/whitehousecalls', '_self')">
+                                <i class="fab fa-telegram " style="color: aliceblue; font-size: 45px;"></i> Telegram
+                            </button>
+                        </div>
+                        <div class="col-sm d-flex btn-box-twitter align-items-center">
+                            <button class="social-button twitter"
+                                onclick="window.open('https://twitter.com/WhiteHouseCall', '_self')">
+                                <img width="45" height="45" src="https://img.icons8.com/ios/50/twitterx--v1.png"
+                                    alt="twitterx--v1" style="filter: invert(100%); margin-right: 20px;" /> Twitter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <script src="./main.js"></script>
 </body>
 
